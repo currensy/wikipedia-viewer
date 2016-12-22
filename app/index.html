@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Wikipedia Viewer</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="wikipediaViewerApp">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+
+
+    <div class="container" ng-controller="MainCtrl as vm">
+      <h1>Wikipedia Viewer</h1>
+      <div class="top20">
+
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="entry-search">
+            <form>
+              <input type="text" ng-model="searchTerm">
+
+              <button type="button" ng-click="vm.searchArticle(searchTerm)">Search</button>
+            </form>
+          </div>
+          <div class="top20"></div>
+          <div class="random-entry">
+            <a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">
+            Or click here for random Entry
+            </a>
+          </div>
+        </div>
+        <div class="col-md-8">
+          <div class="entries fade-in-out" ng-show="vm.entries.length > 0">
+            <h2>Entries for '{{vm.searchTerm}}':</h2>
+            <div class="entry-panel" ng-repeat="entry in vm.entries">
+              <a href="{{entry.url}}" target="_blank">
+              <div class="panel-heading">{{entry.title}}</div>
+              <div class="panel-body">
+                  {{entry.description}}
+              </div>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+      </div>
+
+
+
+
+
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/about.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

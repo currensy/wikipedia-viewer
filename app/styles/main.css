@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+
+body {
+
+  font-family: 'Inconsolata', monospace;
+
+}
+
+
+.random-entry > a {
+  color: black;
+  font-size: 16px;
+
+}
+
+.top20 {
+  margin-top: 20px;
+}
+
+.entry-search {
+  margin-top: 5px;
+}
+
+.entry-search button {
+
+}
+
+.entries h2 {
+  margin-top: 0px;
+  margin-left: 5px;
+}
+
+.entries a {
+  text-decoration: none;
+  color: black;
+}
+
+.entry-panel {
+  background-color: lightgray;
+  margin: 5px;
+}
+
+.entry-panel:hover {
+  opacity: 0.8;
+}
+
+.entry-panel .panel-heading {
+  /*border-bottom: 1px solid blue;*/
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.panel-body {
+  font-size: 16px;
+}
+
+.fade-in-out {
+  transition: 0.5s linear all;
+  opacity: 1;
+}
+
+.fade-in-out.ng-hide {
+  transition: 0.1s linear all;
+  opacity: 0;
+}
